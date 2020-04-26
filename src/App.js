@@ -1,26 +1,39 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import {BrowserRouter as Router, Route} from 'react-router-dom';
+import {
+    Grommet, Box,
+} from 'grommet';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+import Main from './Main';
+import Start from './Start';
+import Friends from './Friends';
+import Map from './Map';
 
-export default App;
+
+const grommet = {
+    global: {
+        font: {
+            family: 'Roboto',
+        },
+    },
+};
+
+const Content = () => (
+    <Box>
+
+        <Route exact path="/" component={Main}/>
+        <Route exact path="/start" component={Start}/>
+        <Route exact path="/friends" component={Friends}/>
+        <Route exact path="/map" component={Map}/>
+
+    </Box>
+
+);
+
+export default () => (
+    <Router>
+        <Grommet theme={grommet}>
+            <Content/>
+        </Grommet>
+    </Router>
+);
