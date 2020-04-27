@@ -4,6 +4,8 @@ import {Box, Heading, RoutedAnchor, Stack,} from "grommet";
 import img from "./assets/img/psychology-4440675.jpg";
 import styled from "styled-components";
 import Start from "./Start"
+import { Down } from 'grommet-icons';
+
 
 const StyledImage = styled.img`
     object-fit: fill;
@@ -20,9 +22,13 @@ const Main = () => (
 
         <Stack anchor={"bottom-left"}>
             <StyledImage src={img}/>
-            <Box height={"small"} margin={"medium"} align={"center"}>
+            <Box  margin={"large"}>
                 <Heading margin={"none"} size={"large"}>SIN IDENTIDAD</Heading>
             </Box>
+            <Box  width={"100vw"} pad={"medium"} align={"center"}>
+                <Down size={"large"}/>
+            </Box>
+
         </Stack>
 
         <Start/>
