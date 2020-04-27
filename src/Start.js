@@ -1,7 +1,8 @@
 import React, {useState} from 'react';
-import {Box, Button, Form, FormField, Heading, Image, Paragraph, RoutedAnchor, TextInput} from 'grommet';
+import {Box, Image, Paragraph} from 'grommet';
 import closedSuitcase from "./assets/img/Maleta-Cerrada.jpg";
 import openSuitcase from "./assets/img/Maleta-Abierta.png";
+import Validation from "./validation";
 
 const Header = function () {
 
@@ -23,6 +24,10 @@ const Header = function () {
         }
 
     };
+
+    const handleSuccess = (event) => {
+        setCanOpen(event)
+    }
 
     return (
         <Box align={"center"} elevation={"medium"} gap={"medium"}>
@@ -54,7 +59,15 @@ const Header = function () {
 
             <Image src={!canOpen ? closedSuitcase : openSuitcase}/>
 
-            {(!canOpen &&
+            <Validation
+                value={"1234"}
+                onValid={handleSuccess}
+                path={"/friends"}
+                successMessage={"Por fin he podido recordar la clave..."}
+                pathText={"continue con su aventura"}
+            />
+
+            {/*{(!canOpen &&
                 <Form onSubmit={handleSubmit}>
                     <Box direction={"row"} gap={"medium"}>
 
@@ -74,7 +87,7 @@ const Header = function () {
                     <Heading>Por fin he podido recordar la clave...</Heading>
                     <RoutedAnchor path={"/friends"}>Pulse aqui para continuar</RoutedAnchor>
                 </Box>)
-            }
+            }*/}
 
         </Box>
 
