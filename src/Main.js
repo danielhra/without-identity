@@ -1,36 +1,34 @@
-import React from 'react';
-import {
-    Avatar,
-    Box,
-    RoutedAnchor,
-    Anchor,
-    Header,
-    Image,
-    Stack,
-    Paragraph,
-    Heading
-} from 'grommet';
+import React from "react";
+import {Box, Heading, RoutedAnchor, Stack,} from "grommet";
 
-import img from "./assets/img/cover.jpg"
-import closedSuitcase from "./assets/img/maletaCerrada.jpg"
+import img from "./assets/img/psychology-4440675.jpg";
+import styled from "styled-components";
+import Start from "./Start"
+
+const StyledImage = styled.img`
+    object-fit: fill;
+    height: 100vh;
+    width: 100%;
+  
+  `;
 
 
 const Main = () => (
 
-    <React.Fragment>
-        <Stack anchor={"center"}>
-            <Image src={img} fill={"horizontal"} opacity={"strong"}/>
 
-            <Box align={"center"} gap={"medium"} >
-                <Heading margin={"none"} size={"xlarge"} color={"light-2"}> SIN IDENTIDAD</Heading>
-                <RoutedAnchor path={"/start"} size={"xlarge"} color={"light-1"}>INICIAR</RoutedAnchor>
+    <Box background={{"color": "#120050"}}>
 
+        <Stack anchor={"bottom-left"}>
+            <StyledImage src={img}/>
+            <Box height={"small"} margin={"medium"} align={"center"}>
+                <Heading margin={"none"} size={"large"}>SIN IDENTIDAD</Heading>
             </Box>
         </Stack>
 
-    </React.Fragment>
+        <Start/>
+
+    </Box>
 
 
 );
 export default Main;
-
