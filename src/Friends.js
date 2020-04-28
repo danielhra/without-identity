@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import {
-    Box, Button, Carousel, Form, FormField, Image, TextInput, Paragraph, Header, Heading, RoutedAnchor
+    Box, Button, Carousel, Form, FormField, Image, TextInput, Header, Heading, RoutedAnchor
 } from 'grommet';
 
 import atenas from "./assets/img/Atenas-Sebastián.png";

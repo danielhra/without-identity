@@ -6,28 +6,7 @@ import Validation from "./validation";
 
 const Header = function () {
 
-    const [value, setValue] = useState('');
-    const [failed, setFailed] = useState(false);
     const [canOpen, setCanOpen] = useState(false);
-
-
-    const handleChange = (event) => {
-        setValue(event.target.value);
-    };
-
-    const handleSubmit = (event) => {
-        if (value !== '1234')
-            setFailed(true);
-        else {
-            setFailed(false);
-            setCanOpen(true);
-        }
-
-    };
-
-    const handleSuccess = (event) => {
-        setCanOpen(event)
-    }
 
     return (
         <Box align={"center"} elevation={"medium"} gap={"medium"}>
@@ -57,37 +36,24 @@ const Header = function () {
                 <Paragraph size={"large"}>¿Serás capaz de ayudarme a encontrar respuestas?</Paragraph>
             </Box>
 
-            <Image src={!canOpen ? closedSuitcase : openSuitcase}/>
+            {!canOpen && <Box height={{min: "medium", max: "medium"}} width={{min: "medium", max: "medium"}}>
+                <Image fit={"contain"} src={closedSuitcase}/>
+            </Box>}
+
+            {canOpen &&
+            <Box height={{min: "medium", max: "medium"}} width={{min: "medium", max: "medium"}} animation={"pulse"}>
+
+                <Image fit={"contain"} src={openSuitcase}/>
+            </Box>}
+
 
             <Validation
                 value={"1234"}
-                onValid={handleSuccess}
+                onValid={setCanOpen}
                 path={"/friends"}
                 successMessage={"Por fin he podido recordar la clave..."}
                 pathText={"continue con su aventura"}
             />
-
-            {/*{(!canOpen &&
-                <Form onSubmit={handleSubmit}>
-                    <Box direction={"row"} gap={"medium"}>
-
-                        <FormField
-                            error={failed ? 'Incorrecto' : ''}
-                        >
-                            <TextInput value={value} onChange={handleChange}/>
-                        </FormField>
-                        <Box alignSelf={"center"}>
-
-                            <Button primary type="submit" label={"submit"}/>
-                        </Box>
-                    </Box>
-                </Form>)}
-            {(canOpen &&
-                <Box>
-                    <Heading>Por fin he podido recordar la clave...</Heading>
-                    <RoutedAnchor path={"/friends"}>Pulse aqui para continuar</RoutedAnchor>
-                </Box>)
-            }*/}
 
         </Box>
 

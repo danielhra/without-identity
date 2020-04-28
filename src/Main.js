@@ -1,5 +1,5 @@
 import React from "react";
-import {Box, Heading, RoutedAnchor, Stack,} from "grommet";
+import {Box, Heading, Stack,} from "grommet";
 
 import img from "./assets/img/psychology-4440675.jpg";
 import styled from "styled-components";
@@ -38,3 +38,4 @@ const Main = () => (
 
 );
 export default Main;
+

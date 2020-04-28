@@ -1,17 +1,19 @@
 import React, {useState} from 'react';
-import {Anchor, Box, Button, Form, FormField, Heading, TextInput} from 'grommet';
+import {Anchor, Box, Button, Form, FormField, Paragraph} from 'grommet';
+
+import {send} from 'grommet-icons';
 
 const Validation = function (props) {
 
-    const [value, setValue] = useState('');
-    const [success, setSuccess] = useState(false);
-
-    const handleChange = (event) => {
-        setValue(event.target.value);
+    const defaultValue = {
+        answer: ''
     };
 
-    const handleSubmit = () => {
-        if (value === props.value) {
+    const [success, setSuccess] = useState(false);
+    const [value, setValue] = useState(defaultValue);
+
+    const handleSubmit = (event) => {
+        if (event.value.answer === props.value) {
             setSuccess(true);
             props.onValid(true);
         }
@@ -19,37 +21,35 @@ const Validation = function (props) {
 
     return (
 
-        <React.Fragment>
+        <Box margin={{bottom: "large"}}>
             {(!success &&
-                <Form onSubmit={handleSubmit} validate={"submit"}>
-                    <Box direction={"row"} gap={"medium"}>
+                <Form onSubmit={handleSubmit} validate={"submit"} value={value} onChange={setValue}>
+                    <Box direction={"row"}>
 
                         <FormField
-                            name="employeeId"
-                            required
+                            name="answer"
                             validate={[
                                 answer => {
-                                    if (answer && answer !== value)
-                                        return { message: "Incorrecto", status: "error" };
+                                    if (answer !== props.value)
+                                        return {message: "Incorrecto", status: "error"};
                                     return undefined;
                                 }
                             ]}
-                            onChange={handleChange}
                         />
 
-                        <Box alignSelf={"center"}>
-                            <Button primary type="submit" label={"submit"}/>
+                        <Box margin={"medium"}>
+                            <Button primary type="submit" label={"?"}/>
                         </Box>
                     </Box>
                 </Form>)}
             {(success &&
-                <Box>
-                    <Heading>{props.successMessage}</Heading>
+                <Box direction={"column"}>
+                    <Paragraph size={"large"}>{props.successMessage}</Paragraph>
                     <Anchor href={props.path}>{props.pathText}</Anchor>
                 </Box>)
             }
 
-        </React.Fragment>
+        </Box>
     );
 
 };
