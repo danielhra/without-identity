@@ -25,7 +25,7 @@ const Main = () => (
             <Box  margin={"large"}>
                 <Heading margin={"none"} size={"large"}>SIN IDENTIDAD</Heading>
             </Box>
-            <Box  width={"100vw"} pad={"medium"} align={"center"}>
+            <Box  width={"100vw"} pad={"medium"} align={"center"} animation={{type:"jiggle", "delay":"3000"}}>
                 <Down size={"large"}/>
             </Box>
 
