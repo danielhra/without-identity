@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.js": "./static/js/main.781b75d2.chunk.js",
+    "main.js.map": "./static/js/main.781b75d2.chunk.js.map",
+    "runtime-main.js": "./static/js/runtime-main.95d80b94.js",
+    "runtime-main.js.map": "./static/js/runtime-main.95d80b94.js.map",
+    "static/js/2.419b99a3.chunk.js": "./static/js/2.419b99a3.chunk.js",
+    "static/js/2.419b99a3.chunk.js.map": "./static/js/2.419b99a3.chunk.js.map",
+    "index.html": "./index.html",
+    "precache-manifest.dff4a8bead6b74126b82f378fe403a4a.js": "./precache-manifest.dff4a8bead6b74126b82f378fe403a4a.js",
+    "service-worker.js": "./service-worker.js",
+    "static/js/2.419b99a3.chunk.js.LICENSE.txt": "./static/js/2.419b99a3.chunk.js.LICENSE.txt",
+    "static/media/Atenas-Sebastián.png": "./static/media/Atenas-Sebastián.55c874a5.png",
+    "static/media/Casablanca-Amal.png": "./static/media/Casablanca-Amal.5c87be83.png",
+    "static/media/Frases Cesár.png": "./static/media/Frases Cesár.b60ee64c.png",
+    "static/media/Maleta-Abierta.png": "./static/media/Maleta-Abierta.90183b19.png",
+    "static/media/Moscu-Uxue.png": "./static/media/Moscu-Uxue.c959d4f9.png",
+    "static/media/Roma-Guiseppe.png": "./static/media/Roma-Guiseppe.2d877878.png",
+    "static/media/psychology-4440675.jpg": "./static/media/psychology-4440675.f69d5df5.jpg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.95d80b94.js",
+    "static/js/2.419b99a3.chunk.js",
+    "static/js/main.781b75d2.chunk.js"
+  ]
+}
